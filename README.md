@@ -20,11 +20,11 @@ It allows:
 ## Tech Stack
 **Frontend**:
 - React.js
-- Tailwind CSS
-- Chart.js
+- CSS
 
 **Backend**:
 - Spring Boot
+- Maven
 - Spring Security (JWT authentication)
 - MySQL
 
