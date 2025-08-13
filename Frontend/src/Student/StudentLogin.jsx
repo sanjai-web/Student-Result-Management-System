@@ -72,11 +72,11 @@ function StudentLogin() {
               value={credentials.regno}
               onChange={handleChange}
               required 
-              placeholder="Enter your registration number"
+              placeholder="Registration number"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="confirmRegno">Confirm Registration Number</label>
+            <label htmlFor="confirmRegno">Password</label>
             <input 
               type="text" 
               id="confirmRegno" 
@@ -84,7 +84,7 @@ function StudentLogin() {
               value={credentials.confirmRegno}
               onChange={handleChange}
               required 
-              placeholder="Re-enter your registration number"
+              placeholder="Password"
             />
           </div>
           <button 
