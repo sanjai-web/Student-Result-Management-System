@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-bg: #f9fafb;
+  --header-gradient: linear-gradient(135deg, #f0f4ff 0%, #e6edff 100%);
+  --card-bg: #ffffff;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --accent-green: #10b981;
+  --accent-blue: #3b82f6;
+  --accent-amber: #f59e0b;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 15px 35px rgba(0,0,0,0.12);
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.main-content {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Welcome Header */
+.welcome-header {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--header-gradient);
+  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+  opacity: 0.6;
+}
+
+.welcome-header h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  position: relative;
+  color: #111827;
+  letter-spacing: -0.5px;
+}
+
+.welcome-header p {
+  font-size: 1.125rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--text-muted);
+  position: relative;
+}
+
+/* Dashboard Grid */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  padding: 0 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 40px 32px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.student-card::after {
+  background: linear-gradient(90deg, var(--accent-green), #34d399);
+}
+
+.teacher-card::after {
+  background: linear-gradient(90deg, var(--accent-blue), #60a5fa);
+}
+
+.admin-card::after {
+  background: linear-gradient(90deg, var(--accent-amber), #fbbf24);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  font-size: 36px;
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.student-card .card-icon {
+  background: linear-gradient(135deg, var(--accent-green), #34d399);
+}
+
+.teacher-card .card-icon {
+  background: linear-gradient(135deg, var(--accent-blue), #60a5fa);
+}
+
+.admin-card .card-icon {
+  background: linear-gradient(135deg, var(--accent-amber), #fbbf24);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.card p {
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  font-size: 0.95rem;
+}
+
+/* Buttons */
+.card-btn {
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: auto;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: -1;
+  transition: var(--transition);
+}
+
+.student-card .card-btn::before {
+  background: linear-gradient(135deg, var(--accent-green), #34d399);
+}
+
+.teacher-card .card-btn::before {
+  background: linear-gradient(135deg, var(--accent-blue), #60a5fa);
+}
+
+.admin-card .card-btn::before {
+  background: linear-gradient(135deg, var(--accent-amber), #fbbf24);
+}
+
+.card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card-btn:hover::before {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .welcome-header {
+    padding: 40px 20px;
+  }
+  
+  .welcome-header h1 {
+    font-size: 2rem;
+  }
+  
+  .dashboard {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+  
+  .card {
+    padding: 30px 24px;
+  }
+}
